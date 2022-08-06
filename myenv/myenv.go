@@ -5,6 +5,8 @@ import (
 	"os"
 )
 
+var SERVICE_PORT string
+
 var LINEBOT_ENDPOINT string
 var LINEBOT_SECRET string
 var LINEBOT_ACCESS_TOKEN string
@@ -28,6 +30,8 @@ func GetMyENV(EnvKey string, defaultValue ...string) string {
 }
 
 func SetEnv() {
+	SERVICE_PORT = GetMyENV("SERVICE_PORT")
+
 	LINEBOT_ENDPOINT = GetMyENV("LINEBOT_ENDPOINT")
 	LINEBOT_SECRET = GetMyENV("LINEBOT_SECRET")
 	LINEBOT_ACCESS_TOKEN = GetMyENV("LINEBOT_ACCESS_TOKEN")

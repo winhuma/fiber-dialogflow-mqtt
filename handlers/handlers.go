@@ -54,7 +54,3 @@ func LineBotCallback(c *fiber.Ctx) error {
 	}
 	return c.Status(200).JSON(models.ResponseSuccess("line bot callback"))
 }
-
-func LineBotReply(c *fiber.Ctx) error {
-	return c.Status(200).JSON(models.ResponseSuccess("line bot reply"))
-}
