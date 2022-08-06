@@ -21,5 +21,5 @@ func main() {
 	app := routes.NewFiber()
 	routes.GetRoutes(app)
 
-	app.Listen(":3000")
+	app.Listen(fmt.Sprintf(":%s", myenv.SERVICE_PORT))
 }
