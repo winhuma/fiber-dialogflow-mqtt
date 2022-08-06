@@ -18,5 +18,4 @@ func routeOther(g fiber.Router) {
 
 func routeLineBot(g fiber.Router) {
 	g.Post("callback", handlers.LineBotCallback)
-	g.Get("reply", handlers.LineBotReply)
 }
