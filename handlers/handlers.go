@@ -34,7 +34,7 @@ func LineBotCallback(c *fiber.Ctx) error {
 	text := strings.Split(strings.ToLower(getTextPayload), " ")
 	var action string
 	var device string
-	if len(test) > 1 {
+	if len(text) > 1 {
 		action = text[0]
 		device = text[1]
 	} else {
