@@ -19,7 +19,7 @@ var connectLostHandler mqtt.ConnectionLostHandler = func(client mqtt.Client, err
 
 func ConnectMQTT() {
 	opts := mqtt.NewClientOptions()
-	opts.AddBroker(fmt.Sprintf("tls://%s:%s", myenv.MQTT_BROKER, myenv.MQTT_PORT))
+	opts.AddBroker(fmt.Sprintf("%s://%s:%s", myenv.MQTT_PROTOCAL, myenv.MQTT_BROKER, myenv.MQTT_PORT))
 	opts.SetClientID("golang-script")
 	if myenv.MQTT_USERNAME != "" {
 		opts.SetUsername(myenv.MQTT_USERNAME)
