@@ -1,1 +1,1 @@
-web: bin/go-setting-started
+web bin/fiber-dialogflow-mqtt
