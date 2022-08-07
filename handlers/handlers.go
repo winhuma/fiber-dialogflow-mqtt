@@ -32,11 +32,17 @@ func LineBotCallback(c *fiber.Ctx) error {
 		return c.Status(400).JSON(models.ResponseFail("Text not match"))
 	}
 	text := strings.Split(strings.ToLower(getTextPayload), " ")
-	action := text[0]
-	device := text[1]
+	var action string
+	var device string
+	if len(test) > 1 {
+		action = text[0]
+		device = text[1]
+	} else {
+		action = text[0]
+	}
 	switch action {
 	case "1":
-		err = services.PublishDevice(device)
+		err = services.PublishDevice(action)
 		myMSG = "ฮา"
 	case "open":
 		err = services.PublishOpen(device)
