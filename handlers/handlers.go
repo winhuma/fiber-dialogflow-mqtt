@@ -35,6 +35,9 @@ func LineBotCallback(c *fiber.Ctx) error {
 	action := text[0]
 	device := text[1]
 	switch action {
+	case "1":
+		err = services.PublishDevice(device)
+		myMSG = "ฮา"
 	case "open":
 		err = services.PublishOpen(device)
 		myMSG = "open device success"

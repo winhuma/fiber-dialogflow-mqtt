@@ -27,3 +27,15 @@ func PublishClose(device string) error {
 	}
 	return nil
 }
+
+func PublishDevice(device string) error {
+	var text = fmt.Sprintf("device %s", device)
+	mqttSession := mymqtt.GetInstantMQTT()
+	token := mqttSession.Publish(myenv.MQTT_TOPIC, 2, false, text)
+	token.Wait()
+	if token.Error() != nil {
+		return fmt.Errorf("failed publish to topic")
+	}
+	return nil
+}
+
