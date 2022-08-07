@@ -13,7 +13,7 @@ func GetRoutes(app *fiber.App) {
 }
 
 func routeOther(g fiber.Router) {
-	g.Get("hello", handlers.Hello)
+	g.Get("", handlers.Hello)
 }
 
 func routeLineBot(g fiber.Router) {
