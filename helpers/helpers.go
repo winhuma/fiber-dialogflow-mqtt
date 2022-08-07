@@ -7,6 +7,6 @@ func CheckFormatFuncCallback(payload string) (match bool) {
 	if match {
 		return match
 	}
-	match, _ = regexp.MatchString("0-9]", payload)
+	match, _ = regexp.MatchString("[0-9]", payload)
 	return match
 }
