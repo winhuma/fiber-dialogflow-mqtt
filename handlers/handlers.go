@@ -41,6 +41,8 @@ func LineBotCallback(c *fiber.Ctx) error {
 	case "close":
 		err = services.PublishClose(device)
 		myMSG = "close device success"
+	case "test":
+		myMSG = "Fuck duck"
 	default:
 		myMSG = "not thing"
 	}
