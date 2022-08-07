@@ -21,8 +21,12 @@ func ConnectMQTT() {
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(fmt.Sprintf("tls://%s:%s", myenv.MQTT_BROKER, myenv.MQTT_PORT))
 	opts.SetClientID("golang-script")
-	// opts.SetUsername(myenv.MQTT_USERNAME) // these are the credentials that you declare for your cluster
-	// opts.SetPassword(myenv.MQTT_PASSWORD)
+	if myenv.MQTT_USERNAME != "" {
+		opts.SetUsername(myenv.MQTT_USERNAME)
+	}
+	if myenv.MQTT_USERNAME != "" {
+		opts.SetPassword(myenv.MQTT_PASSWORD)
+	}
 
 	opts.OnConnect = connectHandler
 	opts.OnConnectionLost = connectLostHandler
