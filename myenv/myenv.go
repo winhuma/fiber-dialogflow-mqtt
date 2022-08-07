@@ -30,7 +30,7 @@ func GetMyENV(EnvKey string, defaultValue ...string) string {
 }
 
 func SetEnv() {
-	SERVICE_PORT = GetMyENV("SERVICE_PORT")
+	SERVICE_PORT = GetMyENV("PORT")
 
 	LINEBOT_ENDPOINT = GetMyENV("LINEBOT_ENDPOINT")
 	LINEBOT_SECRET = GetMyENV("LINEBOT_SECRET")

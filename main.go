@@ -13,7 +13,7 @@ func main() {
 
 	err := godotenv.Load(".env")
 	if err != nil {
-		fmt.Print("[WARNING] .env file not found")
+		fmt.Printf(`[WARNING] .env file not found\n`)
 	}
 	myenv.SetEnv()
 	mymqtt.ConnectMQTT()
